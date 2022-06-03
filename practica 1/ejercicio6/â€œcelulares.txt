@@ -1,0 +1,15 @@
+Codigo: 54, Precio: $2500.00, Marca: samsung
+Stock disponible: 2, Stock minimo: 5, Descripcion: bueno
+Nombre: Galaxy Z
+Codigo: 45, Precio: $700.00, Marca: Apple
+Stock disponible: 25, Stock minimo: 20, Descripcion: medio
+Nombre: Iphone 7 PLUS
+Codigo: 2, Precio: $75.00, Marca: samsung
+Stock disponible: 0, Stock minimo: 5, Descripcion: malo
+Nombre: prime
+Codigo: 20, Precio: $750.00, Marca: apple
+Stock disponible: 77, Stock minimo: 20, Descripcion: bueno
+Nombre: iphone XR
+Codigo: 20, Precio: $750.00, Marca: apple
+Stock disponible: 10, Stock minimo: 20, Descripcion: bueno
+Nombre: iphone XR

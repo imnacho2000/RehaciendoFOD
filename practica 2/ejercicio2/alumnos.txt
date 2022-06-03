@@ -1,0 +1,10 @@
+Codigo de alumno: 5
+Nombre: miqueas
+Apellido: brambilla
+Cantidad de materias sin final: 4
+Cantidad de materias con final: 10
+Codigo de alumno: 9
+Nombre: ignacio
+Apellido: carrera
+Cantidad de materias sin final: 2
+Cantidad de materias con final: 15

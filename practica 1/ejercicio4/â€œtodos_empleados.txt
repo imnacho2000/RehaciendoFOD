@@ -1,0 +1,16 @@
+Numero: 5
+Dni: 12345678
+Nombre: Beck
+Apellido: Fernandez
+Numero: 10
+Dni: 00
+Nombre: Miqueas
+Apellido: Brambilla
+Numero: 9
+Dni: 21666338
+Nombre: Ignacio
+Apellido: Carrera
+Numero: 7
+Dni: 7
+Nombre: Dante
+Apellido: Fernandez

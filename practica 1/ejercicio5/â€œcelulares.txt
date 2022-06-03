@@ -1,0 +1,6 @@
+Codigo: 54, Precio: $2500.00, Marca: samsung
+Stock disponible: 2, Stock minimo: 5, Descripcion: bueno
+Nombre: Galaxy Z
+Codigo: 45, Precio: $700.00, Marca: Apple
+Stock disponible: 25, Stock minimo: 20, Descripcion: medio
+Nombre: Iphone 7 PLUS

@@ -1,0 +1,3 @@
+Codigo: 2, Precio: $75.00, Marca: samsung
+Stock disponible: 0, Stock minimo: 5, Descripcion: malo
+Nombre: prime

@@ -1,0 +1,4 @@
+Numero: 10
+Dni: 00
+Nombre: Miqueas
+Apellido: Brambilla

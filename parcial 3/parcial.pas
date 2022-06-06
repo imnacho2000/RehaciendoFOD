@@ -89,7 +89,6 @@ type
                 if(reg_m.stock_actual = 0) then begin
                     write('La diferencia es: ', dif);
                 end;
-
         end;
 
         for i:= 1 to cant_detalles do begin
@@ -101,8 +100,13 @@ type
 var
     archivoM: archivo_maestro;
     archivoD: arreglo_archivo_detalle;
+    i: integer;
+    i_str: string;
 begin
-    // Assign(archivoM,'maestro'); // se dispone
-    // crear_archivo_detalle(archivoD); // se dispone
+    Assign(archivoM,'maestro');
+    for i:= 1 to cant_detalles do begin
+        Str(i,i_str);
+        Assign(archivoD[i],'Detalle ' + i_str);
+    end;
     actualizar_maestro(archivoM,archivoD);
 end.

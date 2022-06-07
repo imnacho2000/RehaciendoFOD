@@ -85,7 +85,7 @@ type
         reg_m: maestro;
         reg_d: municipio;
         arreglo_regD: arreglo_registro_detalle;
-        i:integer;
+        i,total_nuevos,total_activos:integer;
     begin
         
         for i:= 1 to cant_detalles do begin
@@ -96,7 +96,8 @@ type
         reset(archivoM);
         minimo(archivoD,arreglo_regD,reg_d);
         while(reg_d.cod_localidad <> valor_corte) do begin
-            
+            total_nuevos:=0;
+            total_activos:=0;
             read(archivoM,reg_m);
             while((reg_d.cod_localidad <> reg_m.cod_localidad) and (reg_d.cod_cepa <> reg_m.cod_cepa))do begin
                 read(archivoM,reg_m);
@@ -105,10 +106,14 @@ type
             while((reg_d.cod_localidad = reg_m.cod_localidad) and (reg_d.cod_cepa = reg_m.cod_cepa)) do begin
                 reg_m.cant_fallecidos := reg_m.cant_fallecidos + reg_d.cant_fallecidos;
                 reg_m.cant_recuperados := reg_m.cant_recuperados + reg_d.cant_recuperados;
-                reg_m.cant_activos := reg_m.cant_activos + reg_d.cant_activos;
-                reg_m.cant_nuevos := reg_m.cant_nuevos + reg_d.cant_nuevos;
+                total_nuevos := total_nuevos + reg_d.cant_nuevos;
+                total_activos := total_activos + reg_d.cant_activos;
+
                 minimo(archivoD,arreglo_regD,reg_d);
             end;
+
+            reg_m.cant_activos := total_activos;
+            reg_m.cant_nuevos := total_nuevos;
 
             seek(archivoM,filepos(archivoM)-1);
             write(archivoM,reg_m);
@@ -120,6 +125,25 @@ type
         end;
 
         close(archivoM);
+    end;
+
+    procedure informar(reg_m:maestro);
+    begin
+        write('Codigo de localidad: ', reg_m.cod_localidad, #10, 'Nombre de localidad: ', reg_m.nombre_localidad, #10, 'Codigo de cepa: ', reg_m.cod_cepa, #10, 'Nombre de cepa: ', reg_m.nomb_cepa, #10, 'Cantidad de casos activos: ', reg_m.cant_activos,#10,'Cantidad de casos nuevos: ', reg_m.cant_nuevos,#10,'Cantidad de casos recuperados: ', reg_m.cant_recuperados,#10,'Cantidad de casos fallecidos: ', reg_m.cant_fallecidos,#10);
+    end;
+
+    procedure informar_mas_cincuenta(var archivoM: archivo_maestro);
+    var
+        i:integer;
+        reg_m: maestro;
+    begin
+        reset(archivoM);
+        while not eof(archivoM) do begin
+            read(archivoM,reg_m);
+            if(reg_m.cant_activos > 50) then
+                informar(reg_m);
+        end;
+        close(archivoM)
     end;
 
 var

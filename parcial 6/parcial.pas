@@ -158,4 +158,5 @@ begin
         Assign(archivoD[i],'Detalle ' + i_str);
     end;
     actualizar_maestro(archivoM,archivoD);
+    informar_mas_cincuenta(archivoM);
 end.

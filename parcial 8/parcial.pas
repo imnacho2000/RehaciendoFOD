@@ -39,25 +39,25 @@ type
         close(arch);
         close(info);
     end;
-    
+
 
     procedure agregar(var arch:tArchivo ; p:persona);
     var
-        regM,regMaux:persona;
+        regM:persona;
     begin
         reset(arch);
-        leer(arch,regM);
+        read(arch,regM);
         if (regM.dni > 0) then begin 
-            seek(arch,filesize(arch));
-            write(arch,p)
-        end
-        else begin
-            seek(arch,(regM.dni* -1));
-            leer(arch,regMaux);
+            seek(arch,Abs(regM.dni));
+            read(arch,regM);
             seek(arch,filepos(arch) -1);
             write(arch,p);
             seek(arch,0);
-            write(arch,regMaux)
+            write(arch,regM)
+        end
+        else begin
+            seek(arch,filesize(arch));
+            write(arch,p)
         end;
         close(arch);
     end;

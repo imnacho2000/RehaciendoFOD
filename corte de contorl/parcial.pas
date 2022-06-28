@@ -45,6 +45,7 @@ type
                     while ((sucursal = reg_m.sucursal) and (tipo_prodcuto = reg_m.tipo_producto) and (nombre = reg_m.nombre)) do begin
                         monto_producto = monto_prodcuto + (reg_m.precio * reg_m.cant_vendida);
                         write('Monto de producto: ', (reg_m.precio * reg_m.cant_vendida),' Cantidad vendida: ', reg_m.cant_vendida);
+                        leer(archivo,reg_m);
                     end;
                     total_producto:= total_producto + monto_producto;
                 end;

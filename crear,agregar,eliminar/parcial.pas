@@ -75,8 +75,8 @@ type
             read(arch,regM);
         if(regM.dni = dni) then begin
             regM.dni := head;
-            seek(arch,filepos(arch)-1);
-            head:= (filepos(arch)* -1);
+            head:= ((filepos(arch) - 1) * -1);
+            seek(arch,filepos(arch) - 1);
             write(arch,regM);
             seek(arch,0);
             regM.dni := head;
